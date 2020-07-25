@@ -1,0 +1,143 @@
+/* This software is in the public domain under CC0 1.0 Universal plus a Grant of Patent License. */
+
+#formTitle {
+    text-align: center;
+    font-weight: 500;
+    font-size: 65px;
+}
+
+#Donations > div {
+    width: 40%;
+    margin: 17px auto;
+    text-align: center
+}
+
+#Donations > .row {
+    width: 41%
+}
+
+#Donations .q-field__label {
+    font-size: 20px;
+}
+
+#Donations .q-field__control {
+    height: 50px;
+}
+
+#Donations > div > button {
+    padding: 2px;
+    font-size: 17px;
+    }
+
+a { color:var(--q-color-primary); text-decoration:none; }
+.q-menu a, .q-toolbar a { color:inherit; }
+
+form, fieldset { border:none; display:contents; }
+
+body.dev #top { background: #0c1b29!important; }
+body.test #top { background: #224422!important; }
+
+.body--dark .q-menu { background-color:black; }
+.body--dark img.invertible { -webkit-filter: invert(90%); filter: invert(90%); }
+
+.q-card { background:transparent; }
+.q-card__actions h5 { font-size: 1.1rem; display:inline-block; margin-block-start:0; margin-block-end:0; }
+.q-dialog .q-card { background-color:white; }
+.body--dark .q-dialog .q-card { background-color:black; }
+
+.non-selectable { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+.q-btn { margin: 2px; }
+.q-btn--dense .q-btn__wrapper { padding: 0.285em 0.57em; }
+.q-btn .q-icon, .q-btn .q-spinner { font-size: 18px; } /* was 1.715em ~= 24px */
+
+form.q-form { width:100%; }
+
+/* need small (6px) top margin so floating label does not overlap elements above, but to make all q-field consistent apply too all (not just .q-field--labeled.q-field--dense) */
+.q-field--dense { margin:6px 0 6px 0; }
+/* move field lable up to 'notch' in outline (like https://material.io/components/text-fields) */
+.q-field--dense .q-field__label { top:0; padding-left:4px; padding-right:4px; background-color:white; }
+.body--dark .q-field--dense .q-field__label { background-color:black; }
+/* make notch fit text, not full width */
+.q-field--dense.q-field--float .q-field__label { right:auto; }
+/* move input text up 6px OOTB padding-top:14px */
+.q-field--labeled.q-field--dense .q-field__native { padding-top:8px; }
+/* move drop-down input up 6px; this padding-top defaults to 14px, have to move up 12px to handle wrapped field padding */
+.q-field--auto-height.q-field--dense.q-field--labeled .q-field__control-container { padding-top:0; }
+/* fix blue focus border on top of label instead of behind */
+.q-field__label { z-index:10; }
+
+.q-field__marginal .q-checkbox__label { font-size:10px; } /* orig from q-field__marginal 24px */
+
+.q-item__section--avatar { min-width:30px; } /* orig 56px */
+
+h4, .text-h4 { font-size:1.5rem; margin-block-start:0.25em; margin-block-end:0.25em; }
+.text-success { color:var(--q-color-positive); }
+.text-danger { color:var(--q-color-negative); }
+
+.big-row { display:flex; flex-wrap:wrap; justify-content:flex-start; align-content:center; }
+.big-row-item {}
+
+.q-table--dense .q-table .form-list-nav-row th:first-child { padding:4px 0; }
+.form-list-nav-row .q-bar { background-color:transparent; }
+
+/* ====== div based table styles ====== */
+
+.table { display: table; width: 100%; }
+.thead { display: table-header-group; font-weight: bold; }
+.tfoot { display: table-footer-group; font-weight: bold; }
+.tbody { display: table-row-group; }
+.tr { display: table-row; }
+.td, .th { display: table-cell; vertical-align: middle; }
+
+/* ====== quasar table styles adapted to div based table styles ====== */
+/* NOTE: these are based on quasar.css version 1.12.11 */
+
+/* lines 4216-4531 */
+.q-table .thead .tr, .q-table .tbody .td { height: 48px; }
+.q-table .th { font-weight: 500; font-size: 12px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.q-table .th, .q-table .td { padding: 7px 16px; background-color: inherit; }
+.q-table .thead, .q-table .td, .q-table .th { border-style: solid; border-width: 0; }
+.q-table .tbody .td { font-size: 13px; }
+
+.q-table--no-wrap .th, .q-table--no-wrap .td { white-space: nowrap; }
+.q-table--grid .q-table__middle .thead, .q-table--grid .q-table__middle .thead .th { border: 0 !important; }
+
+.q-table--horizontal-separator .thead .th, .q-table--cell-separator .thead .th, .q-table--horizontal-separator .tbody .tr:not(:last-child) .td,
+    .q-table--cell-separator .tbody .tr:not(:last-child) .td { border-bottom-width: 1px; }
+.q-table--vertical-separator .td, .q-table--cell-separator .td, .q-table--vertical-separator .th, .q-table--cell-separator .th { border-left-width: 1px; }
+.q-table--vertical-separator .thead .tr:last-child .th, .q-table--cell-separator .thead .tr:last-child .th, .q-table--vertical-separator.q-table--loading .tr:nth-last-child(2) .th,
+.q-table--cell-separator.q-table--loading .tr:nth-last-child(2) .th { border-bottom-width: 1px; }
+.q-table--vertical-separator .td:first-child, .q-table--cell-separator .td:first-child, .q-table--vertical-separator .th:first-child,
+    .q-table--cell-separator .th:first-child { border-left: 0; }
+.q-table--dense .q-table .th, .q-table--dense .q-table .td { padding: 4px 8px; }
+.q-table--dense .q-table .thead .tr, .q-table--dense .q-table .tbody .tr, .q-table--dense .q-table .tbody .td { height: 28px; }
+.q-table--dense .q-table .th:first-child, .q-table--dense .q-table .td:first-child { padding-left: 16px; }
+.q-table--dense .q-table .th:last-child, .q-table--dense .q-table .td:last-child { padding-right: 16px; }
+.q-table .thead, .q-table .tr, .q-table .th, .q-table .td { border-color: rgba(0,0,0,0.12); }
+.q-table .tbody .td { position: relative; }
+.q-table .tbody .td:before, .q-table .tbody .td:after { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
+.q-table .tbody .td:before { background: rgba(0,0,0,0.03); }
+.q-table .tbody .td:after { background: rgba(0,0,0,0.06); }
+.q-table .tbody .tr.selected .td:after { content: ''; }
+body.desktop .q-table > .tbody > .tr:not(.q-tr--no-hover):hover > .td:not(.q-td--no-hover):before { content: ''; }
+.q-table--dark .q-table__bottom, .q-table--dark .thead, .q-table--dark .tr, .q-table--dark .th, .q-table--dark .td { border-color: rgba(255,255,255,0.28); }
+.q-table--dark .tbody .td:before { background: rgba(255,255,255,0.07); }
+.q-table--dark .tbody .td:after { background: rgba(255,255,255,0.1); }
+
+/* lines 5730-5735 */
+.q-table .q-virtual-scroll__padding .tr { height: 0 !important; }
+.q-table .q-virtual-scroll__padding .td { padding: 0 !important; }
+
+
+/* ====== print style overrides ====== */
+
+@media print {
+    *, *:before, *:after { background: transparent none !important; }
+    body { background: white none !important; font-size: 10px; }
+
+    button, a.q-btn { display: none !important; }
+    #top, #footer { display: none; }
+
+    tbody>tr:nth-child(even)>td { background-color: #EEEEEE !important; }
+}
